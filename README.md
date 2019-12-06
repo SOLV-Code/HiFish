@@ -6,7 +6,7 @@ Hawaiian language pack for the *rosettafish* package
 
 ## Basic Idea
 
-The [rosettafish package](https://github.com/pbs-assess/rosettafish) is designed to automate the translation of fisheries-related words and short phrases, so that multilingual versions of technical versions can be easily generated in R. *rosettafish* has a built in dictionary for English, French, and Inuktitut, but also allows for customized dictionary files.
+The [rosettafish package](https://github.com/pbs-assess/rosettafish) is designed to automate the translation of fisheries-related words and short phrases, so that multilingual versions of technical figures and tables can be easily generated in R. *rosettafish* has a built in dictionary for English, French, and Inuktitut, but also allows for customized dictionary files.
 
 The purpose of this repository is to build English-Hawaiian dictionary files and develop some illustrations of how to use them. 
 
@@ -17,8 +17,8 @@ The purpose of this repository is to build English-Hawaiian dictionary files and
 
 This repository has 2 main folders:
 
-* *DictionaryFiles*: *.csv* files with  translations of words and short phrases. These files must include one column for each language. Optional columns can be added to help with managing the content and grouping terms for markdown-based summary handouts. 
-* *Examples*: R code, input data, and outputs for the examples summarized below
+* *DictionaryFiles*: files with  translations of words and short phrases. These *.csv* files must include one column for each language. Optional columns can be added to help with managing the content and grouping terms for markdown-based summary handouts. 
+* *Examples*: R code, input data, and outputs for the examples summarized below.
 
 
 
