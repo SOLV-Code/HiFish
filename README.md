@@ -26,7 +26,15 @@ This repository has 2 main folders:
 
 The [main FishLang repository](https://github.com/SOLV-Code/FishLang) is where the general structure of the individual language packs is being developed and coordinated. You can leave general comments, implementation suggestions, and requests for other language packs on the [FishLang Issues Page](https://github.com/SOLV-Code/FishLang/issues).
 
-Any questions, corrections, or suggestions specific to the *Hawaiian* language pack should go up on the [HiFish Issues Page](https://github.com/SOLV-Code/HiFish/issues)
+Any questions, corrections, or suggestions specific to the *Hawaiian* language pack should go up on the [HiFish Issues Page](https://github.com/SOLV-Code/HiFish/issues).
+
+
+The easiest way to customize the dictionary files is to just create local copy on your computer and work with that.  However, you can also share your custom dictionaries using this repository.
+
+You have 2 options for contributing dictionary files to this repository:
+* If you haven't used git/gihub before, it's easiest to just upload of a stand-alone file directly.On this page, go to the *DictionaryFiles* folder, click the *Upload Files* button,
+drag and drop the csv file, add a brief description of the upload, select "commit directly to master branch*, and click commit. **Done**.
+* If you are already a github user, just fork the repository and push either a stand-alone dictionary file or a revised version of a current dictionary file. Revisions of a current file should include a link to an issue describing the revision using [this syntax](https://help.github.com/en/github/writing-on-github/autolinked-references-and-urls#issues-and-pull-requests).
 
 
 
