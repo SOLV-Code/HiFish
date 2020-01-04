@@ -2,7 +2,7 @@
 
 *E komo mai / Welcome*
 
-Hawaiian language pack for the *rosettafish* package
+Hawaiian language pack for the *rosettafish* package.
 
 ## Basic Idea
 
@@ -32,8 +32,8 @@ Any questions, corrections, or suggestions specific to the *Hawaiian* language p
 The easiest way to customize the dictionary files is to just create local copy on your computer and work with that.  However, you can also share your custom dictionaries using this repository.
 
 You have 2 options for contributing dictionary files to this repository:
-* If you haven't used git/gihub before, it's easiest to just upload of a stand-alone file directly.On this page, go to the *DictionaryFiles* folder, click the *Upload Files* button,
-drag and drop the csv file, add a brief description of the upload, select "commit directly to master branch*, and click commit. **Done**.
+* If you haven't used git/github before, it's easiest to just upload a stand-alone file directly. On this page, go to the *DictionaryFiles* folder, click the *Upload Files* button,
+drag and drop the csv file, add a brief description of the upload, select "commit directly to master branch", and click commit.
 * If you are already a github user, just fork the repository and push either a stand-alone dictionary file or a revised version of a current dictionary file. Revisions of a current file should include a link to an issue describing the revision using [this syntax](https://help.github.com/en/github/writing-on-github/autolinked-references-and-urls#issues-and-pull-requests).
 
 
