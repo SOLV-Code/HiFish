@@ -36,13 +36,15 @@ custom.tornadoplot <- function(values,labels,xlab="Value"){
   # labels = vector with text strings
   # xlab = x axis label
   
-  n.species <- length(values)  
+  n.species <- dim(values)[1]  
   y.ticks <- 1:n.species
   plot(1:5,1:5,type="n",xlim=c(-max(values[,1]),max(values[,2])),ylim=c(n.species,1),bty="n",axes=FALSE,
        xlab = xlab,ylab="") 
   axis(1)
-  
+
+  print(par("usr"))
   rect(0,y.ticks-0.5,values[,2],y.ticks+0.5,col="lightblue",border="darkblue")
+  rect(0,y.ticks-0.5,-values[,1],y.ticks+0.5,col="lightblue",border="darkblue")
   #if(!is.null(labels)){text(0,y.ticks,labels=labels,adj=1.1,xpd=NA,col="darkblue")}
   
 }
