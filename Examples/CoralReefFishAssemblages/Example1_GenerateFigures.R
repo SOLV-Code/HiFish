@@ -55,7 +55,27 @@ title(main="Dominant Species")
 
 
 
+custom.multiplot <-  function(values,labels,xlabs){
+  # values = data frame with n numeric columns
+  # labels = vector with text strings
+  # xlabs = x axis label
+  
+n.panels <- dim(values)[2] + 1
+  
+layout(matrix(0:3,nrow=1))
 
+custom.barplot(values[,1],labels=labels,xlab=xlabs[1])
+
+for(i in 2:dim(values)[2]){
+custom.barplot(values[,i],labels=NULL,xlab=xlabs[i])  
+}   
+  
+}
+
+
+# test the multiplot
+custom.multiplot(data.df[,c("IRD","Frequency","Biomass")],labels=data.df$Common.name,
+                 xlabs=c("Index of Relative Dominance","Frequency","Biomass"))
 
 
 
