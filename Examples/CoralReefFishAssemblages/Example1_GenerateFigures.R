@@ -53,7 +53,7 @@ custom.tornadoplot <- function(values,labels,xlab="Value"){
 custom.tornadoplot(data.df[,c("Frequency","Biomass")],labels=data.df$Common.name,xlab="Percent")
 title(main="Dominant Species")
 
-
+#####################
 
 custom.multiplot <-  function(values,labels,xlabs){
   # values = data frame with n numeric columns
@@ -62,10 +62,12 @@ custom.multiplot <-  function(values,labels,xlabs){
   
 n.panels <- dim(values)[2] + 1
   
-layout(matrix(0:3,nrow=1))
+layout(matrix(0:3,nrow=1),width=c(1,3,2,2))
 
+par(mar=c(5,6,3,0))
 custom.barplot(values[,1],labels=labels,xlab=xlabs[1])
 
+par(mar=c(5,2,3,0))
 for(i in 2:dim(values)[2]){
 custom.barplot(values[,i],labels=NULL,xlab=xlabs[i])  
 }   
@@ -80,8 +82,35 @@ custom.multiplot(data.df[,c("IRD","Frequency","Biomass")],labels=data.df$Common.
 
 
 
+# do the translations
+library("devtools")
+devtools::install_github("pbs-assess/rosettafish")
+library(rosettafish)
+terms.use <-read.csv("DictionaryFiles/Hawaiian_Friedlanderetal2003.csv",stringsAsFactors = FALSE) #,
+                    #encoding = "UTF-8")
 
 
 
+
+
+# generate the figures
+labels.english <- data.df$Common.name
+
+# NEED TO CALL IT "FRENCH" UNTIL THEY CHANGE IT IN THE PACKAGE....
+labels.hawaiian <- rosettafish::trans(labels.english, from = "english", to = "french", 
+                                      custom_terms = terms.use[,c("english","french")], allow_missing = FALSE)
+
+
+
+
+png(filename = paste0( "Examples/CoralReefFishAssemblages/Plot_english.png"),
+    width = 480*4, height = 480*3.7, units = "px", pointsize = 14*4, bg = "white",  res = NA)
+
+custom.multiplot(data.df[,c("IRD","Frequency","Biomass")],labels=data.df$Common.name,
+                 xlabs=c("IRD","Frequency (%)","Biomass (%)"))
+
+title(main="Index of Relative Dominance (IRD = Freq * Biomass)",outer=TRUE,line=-2,col.main="darkblue" )
+
+dev.off()
 
 

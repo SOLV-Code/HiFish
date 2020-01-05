@@ -57,7 +57,7 @@ library(rosettafish)
 ```
 
 # Read in the custom dictionary
-terms.use <-read.csv(url("DATA/BaseData/BasicDictionary_Hawaiian.csv",stringsAsFactors = FALSE)
+terms.use <-read.csv("DATA/BaseData/BasicDictionary_Hawaiian.csv",stringsAsFactors = FALSE)
 
 #test the translation function
 rosettafish::trans("Overfishing Profile", from = "english", to = "french", 
