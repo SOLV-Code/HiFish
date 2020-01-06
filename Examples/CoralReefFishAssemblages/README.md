@@ -7,7 +7,7 @@ plotting function to quickly generate alternative versions of a figure (e.g. for
 
 ## Data Source
 
-Table 2 from  [Friedlander *et al.* (2003)*](http://cramp.wcc.hawaii.edu/Downloads/Publications/PRJ_friedlander_et_al_coral_reefs.pdf)  lists frequency, biomass, and index of relative dominance for the top 20 species of coral reef fish observed in 231 transects at 60 survey sites throughout the Hawaiian islands as part of the [Coral Reef Assessment and Monitoring Program (CRAMP)](http://cramp.wcc.hawaii.edu/).
+Table 2 from  [Friedlander *et al.* (2003)](http://cramp.wcc.hawaii.edu/Downloads/Publications/PRJ_friedlander_et_al_coral_reefs.pdf)  lists frequency, biomass, and index of relative dominance for the top 20 species of coral reef fish observed in 231 transects at 60 survey sites throughout the Hawaiian islands as part of the [Coral Reef Assessment and Monitoring Program (CRAMP)](http://cramp.wcc.hawaii.edu/).
 
 
 **Common.name** |	**Frequency** |	**Biomass** | **IRD**
@@ -46,6 +46,8 @@ Blackfin chromis |	48.12 |	0.59 |	28.29
 
 ### Hawaiian Version
 
+*Preliminary, pending refinement of the dictionary file*
+
 <img src="https://github.com/SOLV-Code/HiFish/blob/master/Examples/CoralReefFishAssemblages/Plot_hawaiian.png"
 	width="600">
 
@@ -53,7 +55,7 @@ Blackfin chromis |	48.12 |	0.59 |	28.29
 
 ## Code
 
-The full script is [here](https://github.com/SOLV-Code/HiFish/blob/master/Examples/CoralReefFishAssemblages/Example1_GenerateFigures.R).
+The full script is [here](https://github.com/SOLV-Code/HiFish/blob/master/Examples/CoralReefFishAssemblages/Example1_GenerateFigures.R). The custom plotting functions are [here](https://github.com/SOLV-Code/HiFish/blob/master/CODE/Module_CustomFigs.R). The current version of the dictionary file is [here](https://github.com/SOLV-Code/HiFish/blob/master/DictionaryFiles/Hawaiian_Friedlanderetal2003.csv).
 
 The key bits of code are:
 
@@ -73,7 +75,8 @@ source("CODE/Module_Translate.R")
 data.df <- read.csv("Examples/CoralReefFishAssemblages/Friedlanderetal2003_Table2.csv",stringsAsFactors = FALSE)
 
 
-# generate the figure labels
+# generate the figures
+
 labels.english <- data.df$Common.name
 xlabs.in <- c("IRD","Frequency","Biomass")
 
@@ -90,7 +93,6 @@ title.use <- paste(translate("Index of Relative Dominance", from = "english", to
                    "=", translate("Frequency", from = "english", to = lang.to, terms = terms.use),
                   "*", translate("Biomass", from = "english", to = lang.to, terms = terms.use),
                   ")")
-
 
 png(filename = paste0( "Examples/CoralReefFishAssemblages/Plot_",lang.to,".png"),
     width = 480*4, height = 480*3.7, units = "px", pointsize = 14*4, bg = "white",  res = NA)
