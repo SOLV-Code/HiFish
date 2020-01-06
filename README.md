@@ -55,15 +55,12 @@ library(rosettafish)
 ### Test the translation function
 
 ```
-
 # Read in the custom dictionary
-terms.use <-read.csv("DATA/BaseData/BasicDictionary_Hawaiian.csv",stringsAsFactors = FALSE)
+terms.use <- read.csv("DictionaryFiles/Hawaiian_Friedlanderetal2003.csv",stringsAsFactors = FALSE)
 
 #test the translation function
-rosettafish::trans("Overfishing Profile", from = "english", to = "french", 
-                   custom_terms = terms.use, allow_missing = FALSE)
-
-
+translate(c("Number"), terms = terms.use, from = "english", to = c("english", "hawaiian"),
+          allow_missing = FALSE)
 ```
 
 
@@ -72,7 +69,7 @@ rosettafish::trans("Overfishing Profile", from = "english", to = "french",
 
 ### Plot Examples
 
-
+* [Example 1 - Coral Reef Fish Assemblages](https://github.com/SOLV-Code/HiFish/blob/master/Examples/CoralReefFishAssemblages/README.md): Illustrates how to generate an English and a Hawaiian version of a plot with lots of species labels, several axis labels, and a title.
 
 
 ### Vocabulary Handout Examples

@@ -13,7 +13,7 @@ source("CODE/Module_Translate.R")
 
 # local custom function (for now)
 terms.use <- read.csv("DictionaryFiles/Hawaiian_Friedlanderetal2003.csv",stringsAsFactors = FALSE)
-translate(c("Number","Biomass"), terms = terms.use, from = "english", to = c("english", "hawaiian"),
+translate(c("Number"), terms = terms.use, from = "english", to = c("english", "hawaiian"),
           allow_missing = FALSE)
 
 
