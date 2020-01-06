@@ -49,6 +49,10 @@ drag and drop the csv file, add a brief description of the upload, select "commi
 library("devtools")
 devtools::install_github("pbs-assess/rosettafish")
 library(rosettafish)
+
+# Temporary local fix of the translation function
+# see issue at https://github.com/SOLV-Code/FishLang/issues/3
+source("CODE/Module_Translate.R")
 ```
 
 
