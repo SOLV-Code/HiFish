@@ -69,7 +69,7 @@ translate(c("Number"), terms = terms.use, from = "english", to = c("english", "h
 
 ### Plot Examples
 
-* [Example 1 - Coral Reef Fish Assemblages](https://github.com/SOLV-Code/HiFish/blob/master/Examples/CoralReefFishAssemblages/README.md): Illustrates how to generate an English and a Hawaiian version of a plot with lots of species labels, several axis labels, and a title.
+* [Example 1 - Coral Reef Fish Assemblages](https://github.com/SOLV-Code/HiFish/blob/master/Examples/CoralReefFishAssemblages/): Illustrates how to generate an English and a Hawaiian version of a plot with lots of species labels, several axis labels, and a title.
 
 
 ### Vocabulary Handout Examples
