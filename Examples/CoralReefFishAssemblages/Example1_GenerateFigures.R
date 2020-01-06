@@ -17,13 +17,6 @@ translate(c("Number","Biomass"), terms = terms.use, from = "english", to = c("en
           allow_missing = FALSE)
 
 
-# generate the figure labels
-labels.english <- data.df$Common.name
-
-labels.hawaiian <- translate(labels.english, from = "english", to = "hawaiian", 
-                                 terms = terms.use,
-                                 allow_missing = FALSE)
-
 
 
 ###############################
@@ -57,28 +50,33 @@ custom.multiplot(data.df[,c("IRD","Frequency","Biomass")],labels=data.df$Common.
                  xlabs=c("Index of Relative Dominance","Frequency","Biomass"))
 
 
+# generate the figure labels
+labels.english <- data.df$Common.name
+xlabs.in <- c("IRD","Frequency","Biomass")
+
+for(lang.to in c("english","hawaiian")){
+
+labels.use <- translate(labels.english, from = "english", to = lang.to, 
+                             terms = terms.use,allow_missing = FALSE)
+xlabs.use <- paste0(translate(xlabs.in, from = "english", to = lang.to, 
+                       terms = terms.use, allow_missing = FALSE),
+                      c(" "," (%)"," (%)"))
+title.use <- paste(translate("Index of Relative Dominance", from = "english", to = lang.to, 
+                       terms = terms.use),
+                   "(",translate("IRD", from = "english", to = lang.to, terms = terms.use),
+                   "=", translate("Frequency", from = "english", to = lang.to, terms = terms.use),
+                  "*", translate("Biomass", from = "english", to = lang.to, terms = terms.use),
+                  ")")
 
 
-# generate the figures
-png(filename = paste0( "Examples/CoralReefFishAssemblages/Plot_english.png"),
+png(filename = paste0( "Examples/CoralReefFishAssemblages/Plot_",lang.to,".png"),
     width = 480*4, height = 480*3.7, units = "px", pointsize = 14*4, bg = "white",  res = NA)
-
-custom.multiplot(data.df[,c("IRD","Frequency","Biomass")],labels=labels.english,
-                 xlabs=c("IRD","Frequency (%)","Biomass (%)"))
-
-title(main="Index of Relative Dominance (IRD = Freq * Biomass)",outer=TRUE,line=-2,col.main="darkblue" )
-
+custom.multiplot(data.df[,c("IRD","Frequency","Biomass")],labels=labels.use,
+                 xlabs=xlabs.use)
+title(main=title.use,outer=TRUE,line=-2,col.main="darkblue" )
 dev.off()
 
-png(filename = paste0( "Examples/CoralReefFishAssemblages/Plot_hawaiian.png"),
-    width = 480*4, height = 480*3.7, units = "px", pointsize = 14*4, bg = "white",  res = NA)
 
-custom.multiplot(data.df[,c("IRD","Frequency","Biomass")],labels=labels.hawaiian,
-                 xlabs=c("IRD","Frequency (%)","Biomass (%)"))
-
-title(main="Index of Relative Dominance (IRD = Freq * Biomass)",outer=TRUE,line=-2,col.main="darkblue" )
-
-dev.off()
-
+}
 
 
